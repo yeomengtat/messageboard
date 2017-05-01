@@ -25,7 +25,9 @@ class AppController extends Controller{
      * Register screen
      **/
     public function register(){
-        print "register screen";
+        $view = View::loadView("user/register.php");
+        //if($isset
+        $view->display();
     }
 
     /**
@@ -39,12 +41,9 @@ class AppController extends Controller{
     /**
      * Login
      **/
-    public function login($param = null){
-		if(isset($param)){
-			
-        extract($param);
-		extract($POST);
-		}
+    public function login($p){
+        extract($this->getParams($p));
+        
         $view = View::loadView("user/index.php");
         if(isset($name) && isset($password)){
             if($name == 'admin' && $password == '123'){
@@ -61,8 +60,7 @@ class AppController extends Controller{
      **/
     public function logout(){
         $this->clearSession();
-		$this->index();
-		
+		$this->redirectTo('index');
     }
     
 
