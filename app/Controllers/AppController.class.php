@@ -32,7 +32,8 @@ class AppController extends Controller{
      * Main screen
      **/
     public function main(){
-        print "You are logged in";
+         $view = View::loadView("user/main.html");
+		 $view->display();
     }
 
     /**
@@ -48,7 +49,7 @@ class AppController extends Controller{
         if(isset($name) && isset($password)){
             if($name == 'admin' && $password == '123'){
                 $this->createNewSession();
-                $this->main();
+                $this->redirectTo("");
                 return;
             }
         }
