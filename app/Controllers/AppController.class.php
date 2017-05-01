@@ -44,7 +44,10 @@ class AppController extends Controller{
      **/
     public function main(){
          $view = View::loadView("user/main.html");
-         $view->addData(['user' => $this->getCurrentUser()]);
+         $user = $this->getCurrentUser();
+         //$view->addData(['user' => $this->getCurrentUser()]);
+         $view->set('name', $user->name);
+         
 		 $view->display();
     }
 
