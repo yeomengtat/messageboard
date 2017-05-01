@@ -36,6 +36,7 @@ class View{
         $cwf = "{$this->app_dir}{$this->view_dir}/{$this->file}";
         $this->template = new Template($cwf);
         $this->template->set('srv_base', \Xodebox\Config::$home_dir);  // This is a global variable
+	$this->template->set('ass_dir', \Xoddebox\Config::$asset_dir);
         foreach(self::$shared_vars as $var => $val){
             $this->template->set($var, $val);
         }

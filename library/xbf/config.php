@@ -25,6 +25,7 @@ class Config{
     public static $app_dir  = "";
     public static $routerConfig = [];
     public static $view_dir  = "";
+    public static $asset_dir = "";
     public static $asset_dir = "../assets";
     public static $home_dir  = "";	//Keep the contents away from the front end view
     public static $image_dir = "";
