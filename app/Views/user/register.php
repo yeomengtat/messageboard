@@ -30,7 +30,7 @@ body {
 <body>
 <div class="main">
 <div class="form">
-      <h2>Message Board</h2>
+      <h2>Register form</h2>
 		<form action="#" method="post" class="register-form">
 
 		   <div class="lable-2">
