@@ -4,8 +4,9 @@ use Xodebox\View;
 
 class AppController extends Controller{
     private $loginSession = null;
+    private $current_user = null;
     public function __construct(){
-        session_start();        
+        session_start();
     }
 
     /**
@@ -30,7 +31,10 @@ class AppController extends Controller{
         $view = View::loadView("user/register.php");
         
         if(isset($name) && isset($password)){
-            
+            $user = new User();
+            $user->name = $name;
+            $user->setPassword($password);
+            $user->save();
         }
         $view->display();
     }
@@ -40,6 +44,7 @@ class AppController extends Controller{
      **/
     public function main(){
          $view = View::loadView("user/main.html");
+         $view->addData(['user' => $this->getCurrentUser()]);
 		 $view->display();
     }
 
@@ -51,11 +56,19 @@ class AppController extends Controller{
         
         $view = View::loadView("user/index.php");
         if(isset($name) && isset($password)){
-            if($name == 'admin' && $password == '123'){
-                $this->createNewSession();
-                $this->redirectTo("");
-                return;
+            $user = User::where(['name' => $name]);
+            if(!empty($user)){
+                $user = $user[0];
+                if($user->checkPassword($password) ){
+                    $this->createNewSession($user->id);
+                    $this->redirectTo('index');   //@TODO Give appropriate error messages
+                }else{
+                    $this->redirectTo('index'); //@TODO Give appropriate error messages
+                }
+            }else{
+                $this->redirectTo('index');
             }
+            return;            
         }
         $view->display();
     }
@@ -72,9 +85,9 @@ class AppController extends Controller{
     /**
      * Authorize the user
      **/
-    private function createNewSession(){
+    private function createNewSession($user_id){
         $_SESSION['logged_in'] = true;
-        //$_SESSION['user_id'] = ;//
+        $_SESSION['user_id'] = $user_id;//
     }
 
     /**
@@ -84,6 +97,11 @@ class AppController extends Controller{
         unset($_SESSION['logged_in']);   
     }
 
+    public function getCurrentUser(){
+        if(!$this->isLoggedIn())
+            return false;
+        return User::fetch($_SESSION['user_id']);
+    }
 
 
     /**
