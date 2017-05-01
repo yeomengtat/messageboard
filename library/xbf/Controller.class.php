@@ -75,24 +75,17 @@ class Controller{
 
     }
 
-    /*
-    public function __get($name){
-        if($name == "call"){
-            //var_dump($this);
-            return new CallHandler($this);
-        }
-        else
-            throw new \Exception("Undefined property $name");
-            }*/
-    /*
-    public function Route($controller, $action, $params){
-        Router
-        }*/
 
+    /**
+     *
+     **/
     public function view(){
         return $this->view();
     }
 
+    /**
+     * Redirects to another action in same controller.
+     **/ 
     public function redirectTo($page){
         $home = Config::$home_dir;
         $root = "http://$_SERVER[HTTP_HOST]$home/$page";
@@ -103,6 +96,26 @@ class Controller{
         </script>
 <?php
         //   exit(header("Location: $root"));
+    }
+
+    /**
+     * Alternative extract function to prevent warning messages.
+     **/
+    public function getParams($p){
+        if ($p == null)
+            return [];
+        $ret = [];
+        $post = [];
+        $get = [];
+        if(isset($p['POST'] ))
+           $post = $p['POST'];
+
+        if(isset($p['GET']))
+            $get = $p['GET'];
+        
+        $ret = array_merge($get, $post);
+           
+        return $ret;
     }
 
     function json_decode($s) {
