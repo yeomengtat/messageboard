@@ -1,7 +1,11 @@
 <?php
 use Xodebox\Model;
 
-class AppController extends Model{
+class User extends Model{
+    private $id, $name, $hash;
 
+    
 }
+
+
 ?>
