@@ -29,11 +29,11 @@ body {
 </head>
 <body>
 <div class="main">
-<div class="form">
+
       <h2>Message Board</h2>
 	
 	  
-		<form action="#" method="post" class="login-form">
+		<form action="login" method="post" class="login-form">
 		<div id="inner">
 		 
 		   </div>
@@ -49,7 +49,7 @@ body {
 		  
 		   <div class="clear"> </div>
 		</form>		
-		</div>
+
 		</div>
 </body>
 

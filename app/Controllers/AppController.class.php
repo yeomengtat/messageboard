@@ -38,8 +38,12 @@ class AppController extends Controller{
     /**
      * Login
      **/
-    public function login($param){
+    public function login($param = null){
+		if(isset($param)){
+			
         extract($param);
+		extract($POST);
+		}
         $view = View::loadView("user/index.php");
         if(isset($name) && isset($password)){
             if($name == 'admin' && $password == '123'){
