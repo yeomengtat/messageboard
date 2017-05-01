@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
  <title>Login</title> 
-<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="{ass_dir}/css/style.css" rel='stylesheet' type='text/css' />
 <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
 <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Montserrat:400,700'>
 <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
@@ -13,7 +13,7 @@
 <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
  <style type="text/css">
 body {    
-	background: url('images/header2.jpg') no-repeat center center fixed;
+	background: url('{ass_dir}/images/header2.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -33,7 +33,7 @@ body {
       <h2>Message Board</h2>
 	
 	  
-		<form action="login.php" method="post" class="login-form">
+		<form action="#" method="post" class="login-form">
 		<div id="inner">
 		 
 		   </div>
@@ -44,7 +44,7 @@ body {
 		   </div>
 		   <div class="submit">
 			  <input name="submit" type="submit" value="Login" >
-			 <h3>Not registered? <span class="term"><a href="register.php">Create an account</a></span></h3>
+			 <h3>Not registered? <span class="term"><a href="">Create an account</a></span></h3>
 		   </div>
 		  
 		   <div class="clear"> </div>
@@ -52,4 +52,6 @@ body {
 		</div>
 		</div>
 </body>
+
+
 </html>

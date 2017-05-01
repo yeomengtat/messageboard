@@ -1,10 +1,12 @@
 <?php
 use Xodebox\Controller;
+use Xodebox\View;
 
 class AppController extends Controller{
 
     public function index(){
-        print "Hi. There is nothing here yet.";
+       $view = View::loadView("user/index.php");
+	  $view->display(); 
     }
 }
     
