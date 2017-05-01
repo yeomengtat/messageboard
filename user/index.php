@@ -39,7 +39,7 @@ body {
 		   </div>
 		   <div class="lable-2">
 		   
-		        <input type="text" name="email" class="text" placeholder="your@email.com "    required/>
+		        <input type="text" name="name" class="text" placeholder="Name "    required/>
 		        <input type="password" name="password" class="text" placeholder="Password " required/>
 		   </div>
 		   <div class="submit">
@@ -48,15 +48,8 @@ body {
 		   </div>
 		  
 		   <div class="clear"> </div>
-		</form>
-		<!-----//end-main---->
-	
-		
-			
+		</form>		
 		</div>
 		</div>
-		 <!-----start-copyright---->
-		
-				<!-----//end-copyright---->
 </body>
 </html>

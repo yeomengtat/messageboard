@@ -1,9 +1,3 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,19 +30,13 @@ body {
 <body>
 <div class="main">
 <div class="form">
-      <h2>SolvIT</h2>
+      <h2>Message Board</h2>
 		<form action="registeration.php" method="post" class="register-form">
-		   <div id="inner">
-		   <img src="images/download.png"/>
-		   </div>
+
 		   <div class="lable-2">
 		  
 				<input type="text" name="name" class="text" placeholder="Name" id="name" required/>
-		        <input name="email" id="email" type="text" class="text" placeholder="your@email.com "  required/>
 		        <input type="password" id="password"  name="password" class="text" placeholder="Password " required/>
-				<input type="password" id="password2" name="password2" class="text" placeholder="Password "   required/>
-				<input type="text" id="chat" name="chat" class="text" placeholder="Chat ID"   />
-
 		   </div>
 		   <div class="submit">
 			  <input type="submit" name="submit" value="Sign Up" >
