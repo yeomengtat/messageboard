@@ -40,7 +40,7 @@ body {
 		   </div>
 		   <div class="submit">
 			  <input type="submit" name="submit" value="Sign Up" >
-			   <h3>Already have an account? <span class="term"><a href="">Login</a></span></h3>
+			   <h3>Already have an account? <span class="term"><a href="login">Login</a></span></h3>
 		   </div>
 		  
 		   <div class="clear"> </div>
