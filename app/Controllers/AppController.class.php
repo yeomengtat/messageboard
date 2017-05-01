@@ -38,9 +38,31 @@ class AppController extends Controller{
     /**
      * Login
      **/
-    public function login(){
+    public function login($param){
+        extract($param);
         $view = View::loadView("user/index.php");
+        if(isset($name) && isset($password)){
+            if($name == 'admin' && $password == '123'){
+                $this->createNewSession();
+                $this->main();
+            }
+        }
         $view->display();
+    }
+
+    /**
+     * Authorize the user
+     **/
+    private function createNewSession(){
+        $_SESSION['logged_in'] = true;
+        //$_SESSION['user_id'] = ;//
+    }
+
+    /**
+     * Unauthorize the user (Log out)
+     **/
+    private function clearSession(){
+        unset($_SESSION['logged_in']);   
     }
 
 
