@@ -60,6 +60,8 @@ class AppController extends Controller{
      **/
     public function logout(){
         $this->clearSession();
+		$this->index();
+		
     }
     
 
