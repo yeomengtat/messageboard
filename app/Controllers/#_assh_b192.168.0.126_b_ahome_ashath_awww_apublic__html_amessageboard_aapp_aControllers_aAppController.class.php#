@@ -30,7 +30,7 @@ class AppController extends Controller{
         $view = View::loadView("user/register.php");
         
         if(isset($name) && isset($password)){
-            
+            $name
         }
         $view->display();
     }
