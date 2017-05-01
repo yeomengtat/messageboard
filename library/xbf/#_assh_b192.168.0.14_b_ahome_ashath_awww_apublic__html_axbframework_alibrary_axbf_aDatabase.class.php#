@@ -1,0 +1,21 @@
+<?php
+namespace Xodebox;
+
+interface GenericDatabase{
+    public function query();
+    public function success();
+    public function results();
+}
+
+
+class Database{
+}
+
+
+class DatabaseFactory{
+    public static function create($configArr){
+        return new 
+    }
+}
+
+?>
