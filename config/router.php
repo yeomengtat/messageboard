@@ -21,7 +21,12 @@ Config::$routerConfig = [
             'action'     => 'register'
         ],
 
-        
+
+        [
+            'url' => 'logout',
+            'controller' => 'App',
+            'action'     => 'logout'
+        ]        
 
         
     ],

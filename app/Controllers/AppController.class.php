@@ -49,10 +49,19 @@ class AppController extends Controller{
             if($name == 'admin' && $password == '123'){
                 $this->createNewSession();
                 $this->main();
+                return;
             }
         }
         $view->display();
     }
+
+    /**
+     * Logout action
+     **/
+    public function logout(){
+        $this->clearSession();
+    }
+    
 
     /**
      * Authorize the user
@@ -77,8 +86,10 @@ class AppController extends Controller{
     private function isLoggedIn(){
         if(isset($_SESSION['logged_in'])){
             $this->loginSession = true;
+            return true;
         }else{
             $this->loginSession = false;
+            return false;
         }
     }
 }
