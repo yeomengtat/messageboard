@@ -9,6 +9,7 @@ use Xodebox\ExceptionHandler;
 $exceptionHandler = new ExceptionHandler();
                   
 Xodebox\Config::$home_dir = dirname($_SERVER['SCRIPT_NAME']);
+Xodebox\Config::$asset_dir = dirname($home_dir) . $asset_dir; 
 //print Xodebox\Config::$home_dir;
 
 //$home_dir = get_dir();
