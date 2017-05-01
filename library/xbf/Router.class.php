@@ -125,7 +125,7 @@ class Router{
     }
 
     public function addRouteMap($item){
-        if(isset($item[0]) && is_array($item[0])){
+        if( is_array($item[0])){
             $prepend = RouterFactory::createRoute($item);
             $this->routeMap = array_merge($this->routeMap, $prepend);
             return true;
