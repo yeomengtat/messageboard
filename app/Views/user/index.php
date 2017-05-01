@@ -30,7 +30,7 @@ body {
 <body>
 <div class="main">
 
-      <h2>Message Board</h2>
+      <h2>Login form</h2>
 	
 	  
 		<form action="login" method="post" class="login-form">
